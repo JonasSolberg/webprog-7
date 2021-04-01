@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="no">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Kunder</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Kunde</h3>
+            <form class="form">
+                <div class="form-group">
+                    <label for="navn">Navn</label>
+                    <input type="text" class="form-control" id="navn"/>
+                </div>
+                <div class="form-group">
+                    <label for="adresse">Adresse</label>
+                    <input type="text" class="form-control" id="adresse"/>
+                </div>
+            </form>
+            <button class="btn btn-primary" onclick="regKunde()">Registrer</button><br/>
+        </div>
+        <div class="col-md-8">
+            <h3>Alle kundene:</h3>
+            <div id="kundene"></div>
+            <button class="btn btn-danger" onclick="slettKundene()">Slett alle kunder</button>
+        </div>
+    </div>
+</div>
+<script src="kunde.js"></script>
+</body>
+</html>
