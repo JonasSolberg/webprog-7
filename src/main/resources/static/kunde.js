@@ -1,3 +1,9 @@
+$(function (){
+   hentAlle();
+});
+
+
+
 function regKunde() {
     const kunde = {
         navn : $("#navn").val(),
@@ -5,7 +11,11 @@ function regKunde() {
     }
     $.get("/lagre",kunde,function(retur){
         hentAlle();
-    });
+    })
+        .fail(function (jqXHR){
+           const json = $.parseJSON(jqXHR.responseText);
+           $("#feil").html(json.message);
+        });
     $("#navn").val(""); //tøm input-feltene
     $("#adresse").val("");
 
